@@ -229,7 +229,8 @@
 
   async function loadCities(){
     try{
-      const data = await (await fetch(WORKER_URL + "/api/cities")).json();
+      const ids = CITIES.map(c=>c.id).join(",");
+      const data = await (await fetch(WORKER_URL + "/api/pools?cities=" + ids)).json();
       avail = data.cities || {};
     }catch{ avail = {}; }
     const n = CITIES.filter(c => (avail[c.id]?.available||0) > 0).length;

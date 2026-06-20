@@ -154,7 +154,7 @@
 
   async function loadStats(){
     try{
-      const data = await (await fetch(WORKER_URL + "/api/cities")).json();
+      const data = await (await fetch(WORKER_URL + "/api/pools?cities=" + TARGET)).json();
       const w = (data.cities||{})[TARGET] || {available:0};
       if (w.available <= 0){ show("view-empty"); return; }
       $("counter").innerHTML = `🎟️ <b>${w.available}</b> all-access pass${w.available===1?"":"es"} left`;
