@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>World City Explorer — Free Access</title>
+<meta name="description" content="Grab a free code and unlock World City Explorer premium.">
+<meta name="theme-color" content="#0b1026">
+<style>
+  :root{
+    --bg1:#0b1026; --bg2:#1a1248; --card:rgba(255,255,255,.06); --line:rgba(255,255,255,.12);
+    --ink:#f4f5ff; --dim:#aab0d6; --accent:#7c8bff; --accent2:#5b6cff; --gold:#ffcf6b; --ok:#5ee0a0;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,Segoe UI,Roboto,sans-serif;
+    color:var(--ink); -webkit-font-smoothing:antialiased;
+    background:
+      radial-gradient(1200px 600px at 20% -10%, #2a1d6e 0%, transparent 55%),
+      radial-gradient(900px 500px at 90% 0%, #123a6b 0%, transparent 50%),
+      linear-gradient(160deg, var(--bg1), var(--bg2));
+    min-height:100dvh; display:flex; align-items:center; justify-content:center;
+    padding:24px 18px calc(24px + env(safe-area-inset-bottom));
+  }
+  .card{
+    width:100%; max-width:440px; background:var(--card); border:1px solid var(--line);
+    border-radius:26px; padding:30px 24px 26px; backdrop-filter:blur(18px);
+    box-shadow:0 30px 80px rgba(0,0,0,.45); text-align:center;
+  }
+  .globe{width:74px;height:74px;margin:0 auto 14px;display:block;filter:drop-shadow(0 8px 20px rgba(124,139,255,.5))}
+  h1{font-size:25px;line-height:1.2;margin:0 0 6px;letter-spacing:-.02em}
+  .tag{color:var(--dim);font-size:15px;line-height:1.5;margin:0 auto 18px;max-width:330px}
+  .premium{display:inline-flex;align-items:center;gap:7px;background:rgba(255,207,107,.12);
+    color:var(--gold);font-weight:600;font-size:13px;padding:6px 13px;border-radius:999px;
+    border:1px solid rgba(255,207,107,.3);margin-bottom:20px}
+  .counter{color:var(--dim);font-size:13px;margin:0 0 18px}
+  .counter b{color:var(--ink)}
+  .field{text-align:left;margin:0 0 14px}
+  .field label{display:block;font-size:12.5px;color:var(--dim);margin:0 0 6px;padding-left:4px}
+  input[type=text]{
+    width:100%;padding:14px 16px;border-radius:14px;border:1px solid var(--line);
+    background:rgba(255,255,255,.05);color:var(--ink);font-size:16px;outline:none;
+  }
+  input[type=text]:focus{border-color:var(--accent)}
+  .btn{
+    width:100%;border:0;border-radius:16px;padding:16px;font-size:17px;font-weight:700;
+    color:#fff;cursor:pointer;background:linear-gradient(135deg,var(--accent),var(--accent2));
+    box-shadow:0 12px 30px rgba(91,108,255,.45);transition:transform .08s ease,opacity .2s;
+  }
+  .btn:active{transform:translateY(1px) scale(.99)}
+  .btn[disabled]{opacity:.55;cursor:default;box-shadow:none}
+  .btn.gold{background:linear-gradient(135deg,#ffd680,#ffb43d);color:#3a2600;box-shadow:0 12px 30px rgba(255,180,61,.4)}
+  .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink);box-shadow:none;font-weight:600;font-size:15px}
+  .fine{color:var(--dim);font-size:12px;line-height:1.5;margin-top:16px}
+  /* result */
+  .hidden{display:none}
+  .codebox{
+    margin:6px 0 4px;padding:18px;border-radius:16px;border:1px dashed rgba(255,207,107,.45);
+    background:rgba(255,207,107,.07);
+  }
+  .codebox .lbl{font-size:12px;color:var(--gold);letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+  .code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:21px;font-weight:700;letter-spacing:.06em;word-break:break-all}
+  .copy{margin-top:10px;font-size:13px;color:var(--accent);background:none;border:0;cursor:pointer;font-weight:600}
+  ol.steps{text-align:left;color:var(--dim);font-size:13.5px;line-height:1.6;padding-left:20px;margin:18px 0}
+  ol.steps b{color:var(--ink)}
+  .stack>*+*{margin-top:12px}
+  .check{font-size:40px;margin-bottom:6px}
+  .spin{display:inline-block;width:18px;height:18px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:r .7s linear infinite;vertical-align:-3px;margin-right:8px}
+  @keyframes r{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<main class="card">
+
+  <!-- ============ STEP 1: intro / claim ============ -->
+  <section id="view-claim">
+    <svg class="globe" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="32" cy="32" r="29" fill="url(#g)" stroke="#9fb0ff" stroke-width="1.4"/>
+      <path d="M3 32h58M32 3c11 8 11 50 0 58M32 3C21 11 21 53 32 61M11 14c13 8 29 8 42 0M11 50c13-8 29-8 42 0"
+            stroke="#cdd6ff" stroke-width="1.3" fill="none" opacity=".8"/>
+      <defs><linearGradient id="g" x1="6" y1="6" x2="58" y2="58">
+        <stop stop-color="#6a7bff"/><stop offset="1" stop-color="#3a2f8f"/></linearGradient></defs>
+    </svg>
+    <div class="premium">✦ Premium unlocked, on me</div>
+    <h1>World City Explorer</h1>
+    <p class="tag">Grab a free code below to unlock the full app — every city, every audio guide. Thanks for trying it out! 🌍</p>
+    <p class="counter" id="counter">Checking availability…</p>
+
+    <div class="field">
+      <label for="name">Your name (so I know who grabbed one)</label>
+      <input id="name" type="text" autocomplete="name" placeholder="e.g. Alex" maxlength="60">
+    </div>
+    <button class="btn" id="claimBtn">Get my free code →</button>
+    <p class="fine">One code per person · works on iPhone &amp; iPad · redeemed in the App Store.</p>
+  </section>
+
+  <!-- ============ STEP 2: the code ============ -->
+  <section id="view-code" class="hidden">
+    <div class="premium">🎉 Your code is reserved</div>
+    <h1>Here you go!</h1>
+    <p class="tag">Tap the button to open the App Store with your code pre-filled, then confirm to install.</p>
+
+    <div class="codebox">
+      <div class="lbl">Your one-time code</div>
+      <div class="code" id="codeText">—</div>
+      <button class="copy" id="copyBtn">Copy code</button>
+    </div>
+
+    <div class="stack" style="margin-top:18px">
+      <a class="btn gold" id="redeemLink" href="#" target="_blank" rel="noopener">Open in App Store</a>
+      <button class="btn ghost" id="installedBtn">✅ I installed it</button>
+    </div>
+
+    <ol class="steps">
+      <li>Tap <b>Open in App Store</b> — the redeem screen opens with your code filled in.</li>
+      <li>Tap <b>Redeem</b>, confirm with Face ID, and the app installs free with premium on.</li>
+      <li>Come back and tap <b>I installed it</b> so I know it worked. 🙌</li>
+    </ol>
+    <p class="fine" id="codeHint">Keep this code — it's reserved for you. If the App Store says it's already used, the install already worked.</p>
+  </section>
+
+  <!-- ============ STEP 3: done ============ -->
+  <section id="view-done" class="hidden">
+    <div class="check">🎉</div>
+    <h1>You're all set!</h1>
+    <p class="tag">Thanks for trying World City Explorer. Enjoy the cities — and tell me what you think!</p>
+    <a class="btn" id="reopenLink" href="#" target="_blank" rel="noopener">Open the App Store again</a>
+  </section>
+
+  <!-- ============ sold out ============ -->
+  <section id="view-empty" class="hidden">
+    <div class="check">🙈</div>
+    <h1>All codes claimed</h1>
+    <p class="tag">Every free code has been grabbed. Ping me and I'll add more!</p>
+  </section>
+
+</main>
+
+<script>
+  // Cloudflare Worker backend (no trailing slash).
+  const WORKER_URL = "https://wce-offer-codes.alberto-rodriguez-salgado-97.workers.dev";
+
+  const $ = (id) => document.getElementById(id);
+  const show = (id) => {
+    ["view-claim","view-code","view-done","view-empty"].forEach(v => $(v).classList.add("hidden"));
+    $(id).classList.remove("hidden");
+  };
+  let currentCode = null, currentUrl = null;
+
+  async function loadStats(){
+    try{
+      const r = await fetch(WORKER_URL + "/api/stats");
+      const s = await r.json();
+      if (s.available <= 0){ show("view-empty"); return; }
+      $("counter").innerHTML = `🎟️ <b>${s.available}</b> free code${s.available===1?"":"s"} left`;
+    }catch{
+      $("counter").textContent = "";
+    }
+  }
+
+  async function claim(){
+    const btn = $("claimBtn");
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spin"></span>Reserving your code…';
+    try{
+      const r = await fetch(WORKER_URL + "/api/claim", {
+        method:"POST", headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({ name: $("name").value })
+      });
+      if (r.status === 410){ show("view-empty"); return; }
+      if (!r.ok) throw new Error("claim failed");
+      const data = await r.json();
+      currentCode = data.code; currentUrl = data.url;
+      $("codeText").textContent = data.code;
+      $("redeemLink").href = data.url;
+      $("reopenLink").href = data.url;
+      show("view-code");
+    }catch{
+      btn.disabled = false;
+      btn.textContent = "Hmm, try again →";
+    }
+  }
+
+  async function markInstalled(){
+    const btn = $("installedBtn");
+    btn.disabled = true;
+    try{
+      await fetch(WORKER_URL + "/api/redeemed", {
+        method:"POST", headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({ code: currentCode })
+      });
+    }catch{}
+    show("view-done");
+  }
+
+  $("claimBtn").addEventListener("click", claim);
+  $("installedBtn").addEventListener("click", markInstalled);
+  $("copyBtn").addEventListener("click", async () => {
+    try{ await navigator.clipboard.writeText(currentCode); $("copyBtn").textContent = "Copied ✓"; }
+    catch{ $("copyBtn").textContent = "Select & copy the code above"; }
+  });
+
+  loadStats();
+</script>
+</body>
+</html>
