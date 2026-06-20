@@ -60,19 +60,23 @@
   .scroller{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
     padding:2px 2px 14px;margin:0 -4px 6px;-ms-overflow-style:none;scrollbar-width:none;}
   .scroller::-webkit-scrollbar{display:none}
-  .citycard{flex:0 0 auto;width:150px;height:194px;border-radius:18px;scroll-snap-align:start;
-    position:relative;overflow:hidden;padding:14px;display:flex;flex-direction:column;justify-content:flex-end;
-    text-align:left;box-shadow:0 12px 26px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.14);
-    border:1px solid rgba(255,255,255,.10)}
-  .citycard::before{content:"";position:absolute;inset:0;
-    background:radial-gradient(120px 90px at 78% 14%, rgba(255,255,255,.22), transparent 70%);}
-  .citycard .wm{position:absolute;top:-14px;right:6px;font-family:var(--serif);font-weight:700;
-    font-size:96px;line-height:1;color:rgba(255,255,255,.13);pointer-events:none}
+  .citycard{flex:0 0 auto;width:152px;height:200px;border-radius:18px;scroll-snap-align:start;
+    position:relative;overflow:hidden;padding:13px;display:flex;flex-direction:column;justify-content:flex-end;
+    text-align:left;box-shadow:0 14px 28px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.12)}
+  .citycard .hero{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
+    animation:fade .5s ease both}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .citycard .scrim{position:absolute;inset:0;z-index:1;
+    background:linear-gradient(to top, rgba(0,0,0,.86) 0%, rgba(0,0,0,.5) 30%, rgba(0,0,0,.06) 62%, rgba(0,0,0,.18) 100%)}
+  .citycard .tint{position:absolute;inset:0;z-index:1;mix-blend-mode:soft-light;opacity:.55}
   .citycard .nm{font-family:var(--serif);font-weight:600;font-size:19px;color:#fff;
-    position:relative;text-shadow:0 1px 8px rgba(0,0,0,.35)}
-  .citycard .sb{font-size:11px;line-height:1.35;color:rgba(255,255,255,.86);margin-top:3px;position:relative}
-  .citycard .tagline{position:absolute;top:12px;left:13px;font-size:9.5px;font-weight:700;letter-spacing:.08em;
-    text-transform:uppercase;color:rgba(255,255,255,.78)}
+    position:relative;z-index:2;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+  .citycard .sb{font-size:11px;line-height:1.35;color:rgba(255,255,255,.92);margin-top:3px;position:relative;z-index:2;
+    text-shadow:0 1px 6px rgba(0,0,0,.7)}
+  .citycard .tagline{position:absolute;top:11px;left:11px;z-index:2;font-size:9px;font-weight:700;letter-spacing:.07em;
+    text-transform:uppercase;color:#fff;background:rgba(0,0,0,.42);backdrop-filter:blur(3px);
+    padding:4px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.16)}
 
   .counter{color:var(--dim);font-size:13.5px;margin:14px 0 16px}
   .counter b{color:var(--paper)}
@@ -181,38 +185,40 @@
 
   // Cities mirror the in-app picker: name + subtitle + accent gradient.
   const CITIES = [
-    {n:"Paris",s:"Boulevards, light, Belle Époque echoes",a:"#b85a6a",d:"#5b1f2e"},
-    {n:"Tokyo",s:"Edo neon, shrine quiet",a:"#e8425c",d:"#7a2532"},
-    {n:"Rome",s:"Eternal stones, dome-light",a:"#c0392b",d:"#5c2a1f"},
-    {n:"New York City",s:"Concrete dreams, neon nights",a:"#f5a623",d:"#7a4f0d"},
-    {n:"Barcelona",s:"Modernisme, Mediterranean legends",a:"#e56b5b",d:"#7d3a3a"},
-    {n:"Kyoto",s:"Imperial silence, lacquer red",a:"#c83a3a",d:"#5e1d1d"},
-    {n:"London",s:"Foggy lanterns, river kingdoms",a:"#c0392b",d:"#5c1a14"},
-    {n:"Istanbul",s:"Bosphorus light, minarets, spice",a:"#c54a52",d:"#5e1f24"},
-    {n:"Lisbon",s:"Saudade, fado, Atlantic light",a:"#2d6a78",d:"#123440"},
-    {n:"Madrid",s:"Golden Age, royal avenues",a:"#d9a85a",d:"#7a5224"},
-    {n:"Mexico City",s:"Aztec myth, colonial collision",a:"#3ab8a5",d:"#0e3a38"},
-    {n:"Athens",s:"Marble light, gods, wine-dark evenings",a:"#3a7bb8",d:"#16385c"},
-    {n:"Hong Kong",s:"Neon harbours, dim sum mornings",a:"#d83a3a",d:"#5e1212"},
-    {n:"Seoul",s:"Joseon palaces, neon hanok",a:"#2e6da4",d:"#122d45"},
-    {n:"Bangkok",s:"Gilded temples, river light",a:"#d4a017",d:"#6e5410"},
-    {n:"Osaka",s:"Kuidaore, neon canals",a:"#f0a830",d:"#7c5414"},
-    {n:"Taipei",s:"Jade towers, temple smoke",a:"#2d8c5e",d:"#12402a"},
-    {n:"San Francisco",s:"Fog, hills, golden gateways",a:"#c0392b",d:"#5c1a14"},
-    {n:"Los Angeles",s:"Sun-bleached boulevards, Pacific dusk",a:"#e88f3a",d:"#7a3a14"},
-    {n:"Berlin",s:"Cold War ghosts, techno nights",a:"#4a7fa5",d:"#1e3a52"},
-    {n:"Shanghai",s:"Bund neon, shikumen alleys",a:"#2d6a78",d:"#14393f"},
-    {n:"Beijing",s:"Imperial silence, dragon courtyards",a:"#8b2635",d:"#4a1018"},
-    {n:"Munich",s:"Bavarian beer, Alpine horizons",a:"#4a7c59",d:"#1e3828"},
-    {n:"Chengdu",s:"Bamboo, teahouses, slow days",a:"#5d7c3c",d:"#2d3e16"},
-    {n:"Chongqing",s:"Mountain heat, hot-pot fog",a:"#c44d20",d:"#5e2410"},
+    {n:"Paris",s:"Boulevards, light, Belle Époque echoes",a:"#b85a6a",d:"#5b1f2e",img:"https://worldcityexplorer.net/images/paris_poi_001_hero.png"},
+    {n:"Tokyo",s:"Edo neon, shrine quiet",a:"#e8425c",d:"#7a2532",img:"https://worldcityexplorer.net/images/tokyo_poi_001_hero.png"},
+    {n:"Rome",s:"Eternal stones, dome-light",a:"#c0392b",d:"#5c2a1f",img:"https://worldcityexplorer.net/images/rome_poi_001_hero.png"},
+    {n:"New York City",s:"Concrete dreams, neon nights",a:"#f5a623",d:"#7a4f0d",img:"https://worldcityexplorer.net/images/nyc_poi_001_hero.png"},
+    {n:"Barcelona",s:"Modernisme, Mediterranean legends",a:"#e56b5b",d:"#7d3a3a",img:"https://worldcityexplorer.net/images/barcelona_poi_001_hero.jpg"},
+    {n:"Kyoto",s:"Imperial silence, lacquer red",a:"#c83a3a",d:"#5e1d1d",img:"https://worldcityexplorer.net/images/kyoto_poi_001_hero.png"},
+    {n:"London",s:"Foggy lanterns, river kingdoms",a:"#c0392b",d:"#5c1a14",img:"https://worldcityexplorer.net/images/london_poi_001_hero.png"},
+    {n:"Istanbul",s:"Bosphorus light, minarets, spice",a:"#c54a52",d:"#5e1f24",img:"https://worldcityexplorer.net/images/istanbul_poi_001_cue_01.png"},
+    {n:"Lisbon",s:"Saudade, fado, Atlantic light",a:"#2d6a78",d:"#123440",img:"https://worldcityexplorer.net/images/lisbon_poi_001_hero.png"},
+    {n:"Madrid",s:"Golden Age, royal avenues",a:"#d9a85a",d:"#7a5224",img:"https://worldcityexplorer.net/images/madrid_poi_001_hero.png"},
+    {n:"Mexico City",s:"Aztec myth, colonial collision",a:"#3ab8a5",d:"#0e3a38",img:"https://worldcityexplorer.net/images/mexico_city_poi_001_hero.png"},
+    {n:"Athens",s:"Marble light, gods, wine-dark evenings",a:"#3a7bb8",d:"#16385c",img:"https://worldcityexplorer.net/images/athens_poi_001_hero.png"},
+    {n:"Hong Kong",s:"Neon harbours, dim sum mornings",a:"#d83a3a",d:"#5e1212",img:"https://worldcityexplorer.net/images/hongkong_poi_001_hero.jpg"},
+    {n:"Seoul",s:"Joseon palaces, neon hanok",a:"#2e6da4",d:"#122d45",img:"https://worldcityexplorer.net/images/seoul_poi_001_hero.png"},
+    {n:"Bangkok",s:"Gilded temples, river light",a:"#d4a017",d:"#6e5410",img:"https://worldcityexplorer.net/images/bangkok_poi_001_hero.jpg"},
+    {n:"Osaka",s:"Kuidaore, neon canals",a:"#f0a830",d:"#7c5414",img:"https://worldcityexplorer.net/images/osaka_poi_001_hero.png"},
+    {n:"Taipei",s:"Jade towers, temple smoke",a:"#2d8c5e",d:"#12402a",img:"https://worldcityexplorer.net/images/taipei_poi_001_hero.png"},
+    {n:"San Francisco",s:"Fog, hills, golden gateways",a:"#c0392b",d:"#5c1a14",img:"https://worldcityexplorer.net/images/sf_poi_001_hero.jpg"},
+    {n:"Los Angeles",s:"Sun-bleached boulevards, Pacific dusk",a:"#e88f3a",d:"#7a3a14",img:"https://worldcityexplorer.net/images/losangeles_poi_001_hero.png"},
+    {n:"Berlin",s:"Cold War ghosts, techno nights",a:"#4a7fa5",d:"#1e3a52",img:"https://worldcityexplorer.net/images/berlin_poi_001_hero.jpg"},
+    {n:"Shanghai",s:"Bund neon, shikumen alleys",a:"#2d6a78",d:"#14393f",img:"https://worldcityexplorer.net/images/shanghai_poi_001_hero.jpg"},
+    {n:"Beijing",s:"Imperial silence, dragon courtyards",a:"#8b2635",d:"#4a1018",img:"https://worldcityexplorer.net/images/beijing_poi_001_hero.jpg"},
+    {n:"Munich",s:"Bavarian beer, Alpine horizons",a:"#4a7c59",d:"#1e3828",img:"https://worldcityexplorer.net/images/munich_poi_001_hero.png"},
+    {n:"Chengdu",s:"Bamboo, teahouses, slow days",a:"#5d7c3c",d:"#2d3e16",img:"https://worldcityexplorer.net/images/chengdu_poi_001_hero.jpg"},
+    {n:"Chongqing",s:"Mountain heat, hot-pot fog",a:"#c44d20",d:"#5e2410",img:"https://worldcityexplorer.net/images/chongqing_poi_001_hero.jpg"},
   ];
 
   function renderCities(){
     const el = document.getElementById("scroller");
     el.innerHTML = CITIES.map(c => `
       <div class="citycard" style="background:linear-gradient(155deg, ${c.a}, ${c.d})">
-        <span class="wm">${c.n[0]}</span>
+        <img class="hero" src="${c.img}" alt="${c.n}" loading="lazy" decoding="async" onerror="this.remove()">
+        <div class="scrim"></div>
+        <div class="tint" style="background:linear-gradient(155deg, ${c.a}, ${c.d})"></div>
         <span class="tagline">◍ Audio guide</span>
         <div class="nm">${c.n}</div>
         <div class="sb">${c.s}</div>
