@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>World City Explorer — All-Access Pass</title>
+<meta name="description" content="A gift: the entire World City Explorer app — every city, unlocked.">
+<meta name="theme-color" content="#1c0f0a">
+<meta name="robots" content="noindex">
+<link rel="apple-touch-icon" href="logo.png"><link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0c0805;--inkDeep:#05030a;--bgTop:#1c0f0a;--paper:#fbefe0;--paperWarm:#f4e8cf;
+    --dim:rgba(251,239,224,.64);--hush:rgba(251,239,224,.44);--faint:rgba(251,239,224,.26);
+    --line:rgba(251,239,224,.14);--surf:rgba(255,255,255,.045);
+    --gilt:#e8b870;--gold:#d9a85a;--coral:#e56b5b;--deep:#a23a2e;
+    --serif:'Fraunces',Georgia,serif;--ui:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,Segoe UI,Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;min-height:100%}
+  body{font-family:var(--ui);color:var(--paper);-webkit-font-smoothing:antialiased;
+    background:
+      radial-gradient(900px 480px at 50% -6%, rgba(232,184,112,.28), transparent 60%),
+      radial-gradient(700px 460px at 85% 8%, rgba(217,168,90,.18), transparent 55%),
+      linear-gradient(170deg, var(--bgTop) 0%, var(--ink) 50%, var(--inkDeep) 100%);
+    background-attachment:fixed;min-height:100dvh;display:flex;align-items:flex-start;justify-content:center;
+    padding:30px 16px calc(34px + env(safe-area-inset-bottom));}
+  .card{width:100%;max-width:472px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.02));
+    border:1px solid rgba(232,184,112,.28);border-radius:28px;padding:32px 22px 26px;backdrop-filter:blur(14px);
+    box-shadow:0 40px 90px rgba(0,0,0,.55),0 0 0 1px rgba(232,184,112,.08),inset 0 1px 0 rgba(255,255,255,.07);
+    text-align:center;position:relative;overflow:hidden;}
+  .card::before{content:"";position:absolute;inset:0;border-radius:28px;pointer-events:none;
+    background:linear-gradient(120deg,transparent 30%,rgba(232,184,112,.07) 50%,transparent 70%)}
+  .logo{width:92px;height:92px;border-radius:22px;display:block;margin:0 auto 16px;
+    box-shadow:0 14px 40px rgba(0,0,0,.5),0 0 0 1px rgba(232,184,112,.35),0 0 30px rgba(232,184,112,.25);}
+  .seal{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:#241606;background:linear-gradient(135deg,#f3d089,var(--gilt),var(--gold));padding:7px 16px;border-radius:999px;
+    box-shadow:0 8px 22px rgba(217,168,90,.45);margin-bottom:16px}
+  h1{font-family:var(--serif);font-weight:600;font-size:31px;line-height:1.08;letter-spacing:-.01em;margin:0 0 8px}
+  h1 em{font-style:italic;color:var(--gilt)}
+  .tag{color:var(--dim);font-size:15px;line-height:1.55;margin:0 auto 18px;max-width:350px}
+
+  .mosaic{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;border-radius:16px;overflow:hidden;
+    position:relative;margin:0 0 8px;border:1px solid rgba(232,184,112,.25)}
+  .mosaic img{width:100%;aspect-ratio:1/1.15;object-fit:cover;display:block;animation:fade .6s ease both}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .mosaic .cap{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;pointer-events:none;
+    background:linear-gradient(to top,rgba(8,5,3,.92) 0%,rgba(8,5,3,.25) 26%,rgba(8,5,3,0) 50%);padding-bottom:12px}
+  .mosaic .cap b{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--paper);letter-spacing:.02em}
+  .mosaic .cap b span{color:var(--gilt)}
+
+  .counter{color:var(--dim);font-size:13.5px;margin:14px 0 16px}.counter b{color:var(--paper)}
+  .field{text-align:left;margin:0 0 14px}
+  .field label{display:block;font-size:12.5px;color:var(--dim);margin:0 0 6px;padding-left:4px}
+  input[type=text]{width:100%;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:var(--surf);color:var(--paper);font-size:16px;font-family:var(--ui);outline:none}
+  input[type=text]::placeholder{color:var(--faint)}input[type=text]:focus{border-color:var(--gilt)}
+  .btn{width:100%;border:0;border-radius:16px;padding:16px;font-size:17px;font-weight:700;cursor:pointer;font-family:var(--ui);transition:transform .08s,opacity .2s}
+  .btn:active{transform:translateY(1px) scale(.99)}.btn[disabled]{opacity:.5;cursor:default}
+  .btn.gold{background:linear-gradient(135deg,#f3d089,var(--gilt),var(--gold));color:#241606;box-shadow:0 14px 32px rgba(217,168,90,.45)}
+  .btn.coral{background:linear-gradient(135deg,var(--coral),var(--deep));color:#fff;box-shadow:0 12px 28px rgba(229,107,91,.38)}
+  .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--paper);font-weight:600;font-size:15px}
+  .fine{color:var(--hush);font-size:12px;line-height:1.55;margin-top:16px}
+
+  .hidden{display:none}
+  .codebox{margin:8px 0 4px;padding:18px;border-radius:16px;border:1px dashed rgba(232,184,112,.55);background:linear-gradient(180deg,rgba(232,184,112,.12),rgba(232,184,112,.04))}
+  .codebox .lbl{font-size:11px;color:var(--gilt);letter-spacing:.08em;text-transform:uppercase;margin-bottom:9px;font-weight:700}
+  .code{font-family:ui-monospace,Menlo,monospace;font-size:21px;font-weight:700;letter-spacing:.06em;word-break:break-all;color:var(--paper)}
+  .copy{margin-top:10px;font-size:13px;color:var(--gilt);background:none;border:0;cursor:pointer;font-weight:600}
+  ol.steps{text-align:left;color:var(--dim);font-size:13.5px;line-height:1.65;padding-left:20px;margin:18px 0}ol.steps b{color:var(--paper)}
+  .stack>*+*{margin-top:12px}.check{font-size:44px;margin-bottom:4px}
+  .spin{display:inline-block;width:18px;height:18px;border:2.5px solid rgba(36,22,6,.35);border-top-color:#241606;border-radius:50%;animation:r .7s linear infinite;vertical-align:-3px;margin-right:8px}
+  @keyframes r{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<main class="card">
+
+  <!-- ===== claim ===== -->
+  <section id="view-claim">
+    <img class="logo" src="logo.png" alt="World City Explorer" width="92" height="92">
+    <div class="seal">✦ All-Access Pass</div>
+    <h1>The whole world, <em>unlocked</em></h1>
+    <p class="tag">A little gift for you — the entire app, <b>every city</b>, every cinematic audio guide. No picking just one. 🌍</p>
+
+    <div class="mosaic" id="mosaic"></div>
+    <p class="counter" id="counter">Checking…</p>
+
+    <div class="field">
+      <label for="name">Your name (so I know who I gifted)</label>
+      <input id="name" type="text" autocomplete="name" placeholder="e.g. Mom" maxlength="60">
+    </div>
+    <button class="btn gold" id="claimBtn">Claim my all-access pass →</button>
+    <p class="fine">Unlocks all 25 cities · works on iPhone &amp; iPad · redeemed in the App Store.</p>
+  </section>
+
+  <!-- ===== code ===== -->
+  <section id="view-code" class="hidden">
+    <img class="logo" src="logo.png" alt="" width="92" height="92">
+    <div class="seal">🎟️ Reserved for you</div>
+    <h1>Here's your pass!</h1>
+    <p class="tag">Tap below to open the App Store with your code pre-filled, then confirm — the whole app unlocks.</p>
+    <div class="codebox"><div class="lbl">Your all-access code</div><div class="code" id="codeText">—</div><button class="copy" id="copyBtn">Copy code</button></div>
+    <div class="stack" style="margin-top:18px">
+      <a class="btn coral" id="redeemLink" href="#" target="_blank" rel="noopener">Open in App Store</a>
+      <button class="btn ghost" id="installedBtn">✅ I installed it</button>
+    </div>
+    <ol class="steps">
+      <li>Tap <b>Open in App Store</b> — the redeem screen opens with your code filled in.</li>
+      <li>Tap <b>Redeem</b>, confirm with Face ID, and every city unlocks free.</li>
+      <li>Come back and tap <b>I installed it</b> so I know it worked. 🙌</li>
+    </ol>
+    <p class="fine">Keep this code — it's reserved for you. If the App Store says it's already used, the unlock already worked.</p>
+  </section>
+
+  <!-- ===== done ===== -->
+  <section id="view-done" class="hidden">
+    <img class="logo" src="logo.png" alt="" width="92" height="92">
+    <div class="check">🎉</div><h1>You're all set!</h1>
+    <p class="tag">The whole world is yours to explore. Enjoy — and tell me where you wander first!</p>
+    <a class="btn coral" id="reopenLink" href="#" target="_blank" rel="noopener">Open the App Store again</a>
+  </section>
+
+  <!-- ===== empty ===== -->
+  <section id="view-empty" class="hidden">
+    <img class="logo" src="logo.png" alt="" width="92" height="92">
+    <div class="check">🙈</div><h1>All passes claimed</h1>
+    <p class="tag">Every all-access pass has been gifted. Ping me and I'll add more!</p>
+  </section>
+
+</main>
+
+<script>
+  const WORKER_URL = "https://wce-offer-codes.alberto-rodriguez-salgado-97.workers.dev";
+  const TARGET = "world"; // whole-app pool
+
+  // hero thumbnails for the mosaic (value showcase)
+  const HEROES = [
+    "paris_poi_001_hero.png","tokyo_poi_001_hero.png","rome_poi_001_hero.png","nyc_poi_001_hero.png","barcelona_poi_001_hero.jpg",
+    "kyoto_poi_001_hero.png","london_poi_001_hero.png","istanbul_poi_001_cue_01.png","lisbon_poi_001_hero.png","madrid_poi_001_hero.png",
+    "mexico_city_poi_001_hero.png","athens_poi_001_hero.png","hongkong_poi_001_hero.jpg","seoul_poi_001_hero.png","bangkok_poi_001_hero.jpg",
+    "osaka_poi_001_hero.png","taipei_poi_001_hero.png","sf_poi_001_hero.jpg","losangeles_poi_001_hero.png","berlin_poi_001_hero.jpg",
+    "shanghai_poi_001_hero.jpg","beijing_poi_001_hero.jpg","munich_poi_001_hero.png","chengdu_poi_001_hero.jpg","chongqing_poi_001_hero.jpg",
+  ];
+  const $ = (id) => document.getElementById(id);
+  const show = (v) => { ["view-claim","view-code","view-done","view-empty"].forEach(x=>$(x).classList.add("hidden")); $(v).classList.remove("hidden"); window.scrollTo({top:0,behavior:"smooth"}); };
+
+  function renderMosaic(){
+    $("mosaic").innerHTML = HEROES.map(h=>`<img src="https://worldcityexplorer.net/images/${h}" alt="" loading="lazy" decoding="async" onerror="this.style.visibility='hidden'">`).join("")
+      + `<div class="cap"><b><span>25 cities</span> · all unlocked</b></div>`;
+  }
+
+  async function loadStats(){
+    try{
+      const data = await (await fetch(WORKER_URL + "/api/cities")).json();
+      const w = (data.cities||{})[TARGET] || {available:0};
+      if (w.available <= 0){ show("view-empty"); return; }
+      $("counter").innerHTML = `🎟️ <b>${w.available}</b> all-access pass${w.available===1?"":"es"} left`;
+    }catch{ $("counter").textContent = ""; }
+  }
+
+  async function claim(){
+    const btn = $("claimBtn"); btn.disabled = true; btn.innerHTML = '<span class="spin"></span>Reserving your pass…';
+    try{
+      const r = await fetch(WORKER_URL + "/api/claim", {method:"POST",headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({ city: TARGET, name: $("name").value })});
+      if (r.status === 410){ show("view-empty"); return; }
+      if (!r.ok) throw new Error();
+      const d = await r.json();
+      $("codeText").textContent = d.code; $("redeemLink").href = d.url; $("reopenLink").href = d.url;
+      show("view-code");
+    }catch{ btn.disabled = false; btn.textContent = "Hmm, try again →"; }
+  }
+  async function markInstalled(){
+    $("installedBtn").disabled = true;
+    try{ await fetch(WORKER_URL + "/api/redeemed", {method:"POST",headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({ city: TARGET, code: $("codeText").textContent })}); }catch{}
+    show("view-done");
+  }
+  $("claimBtn").addEventListener("click", claim);
+  $("installedBtn").addEventListener("click", markInstalled);
+  $("copyBtn").addEventListener("click", async ()=>{ try{ await navigator.clipboard.writeText($("codeText").textContent); $("copyBtn").textContent="Copied ✓"; }catch{ $("copyBtn").textContent="Select & copy above"; } });
+
+  renderMosaic();
+  loadStats();
+</script>
+</body>
+</html>
