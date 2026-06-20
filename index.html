@@ -205,11 +205,10 @@
     el.innerHTML = CITIES.map((c,i) => {
       const a = avail[c.id] || {available:0,total:0};
       const claimable = a.available > 0;
-      const chip = claimable ? `<span class="chip free">Free</span>` : `<span class="chip soon">Soon</span>`;
-      const hint = claimable ? `<span class="pickhint">Tap to unlock</span>` : "";
+      const chip = claimable ? `<span class="chip free">✦ Free</span>` : `<span class="chip soon">Soon</span>`;
       return `<div class="citycard ${claimable?'claimable':'soon'}" data-i="${i}" style="background:linear-gradient(155deg,${c.a},${c.d})">
         <img class="hero" src="${c.img}" alt="${c.n}" loading="lazy" decoding="async" onerror="this.remove()">
-        <div class="scrim"></div>${chip}${hint}
+        <div class="scrim"></div>${chip}
         <div class="nm">${c.n}</div><div class="sb">${c.s}</div>
       </div>`;
     }).join("");
