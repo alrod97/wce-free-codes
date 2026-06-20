@@ -3,111 +3,93 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>World City Explorer — Free Access</title>
-<meta name="description" content="Grab a free code and unlock World City Explorer premium — 25 cities, 5 languages, cinematic audio guides.">
+<title>World City Explorer — Pick a City, Free</title>
+<meta name="description" content="Pick a city and unlock it free in World City Explorer — cinematic audio guides, 5 languages.">
 <meta name="theme-color" content="#1c0f0a">
-<meta property="og:title" content="World City Explorer — your free pass">
-<meta property="og:description" content="Unlock every city and audio guide, free. Grab a code →">
+<meta property="og:title" content="World City Explorer — unlock a city, free">
+<meta property="og:description" content="Pick any city and I'll unlock it for you, free. 🌍">
 <meta property="og:image" content="logo.png">
-<link rel="apple-touch-icon" href="logo.png">
-<link rel="icon" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png"><link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0c0805; --inkDeep:#05030a; --bgTop:#1c0f0a;
-    --paper:#fbefe0; --paperWarm:#f4e8cf;
-    --dim:rgba(251,239,224,.64); --hush:rgba(251,239,224,.44); --faint:rgba(251,239,224,.26);
-    --line:rgba(251,239,224,.14); --surf:rgba(255,255,255,.045); --surf2:rgba(255,255,255,.08);
-    --gilt:#e8b870; --gold:#d9a85a; --coral:#e56b5b; --deep:#a23a2e; --jade:#3ab8a5;
-    --serif:'Fraunces',Georgia,'Times New Roman',serif;
-    --ui:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,Segoe UI,Roboto,sans-serif;
+    --ink:#0c0805;--inkDeep:#05030a;--bgTop:#1c0f0a;--paper:#fbefe0;--paperWarm:#f4e8cf;
+    --dim:rgba(251,239,224,.64);--hush:rgba(251,239,224,.44);--faint:rgba(251,239,224,.26);
+    --line:rgba(251,239,224,.14);--surf:rgba(255,255,255,.045);--surf2:rgba(255,255,255,.08);
+    --gilt:#e8b870;--gold:#d9a85a;--coral:#e56b5b;--deep:#a23a2e;--jade:#3ab8a5;
+    --serif:'Fraunces',Georgia,serif;--ui:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,Segoe UI,Roboto,sans-serif;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{margin:0;min-height:100%}
-  body{
-    font-family:var(--ui); color:var(--paper); -webkit-font-smoothing:antialiased;
+  body{font-family:var(--ui);color:var(--paper);-webkit-font-smoothing:antialiased;
     background:
-      radial-gradient(900px 480px at 50% -8%, rgba(232,184,112,.20) 0%, transparent 60%),
-      radial-gradient(700px 420px at 88% 4%, rgba(229,107,91,.16) 0%, transparent 55%),
-      radial-gradient(700px 500px at 8% 18%, rgba(58,184,165,.10) 0%, transparent 55%),
+      radial-gradient(900px 480px at 50% -8%, rgba(232,184,112,.20), transparent 60%),
+      radial-gradient(700px 420px at 88% 4%, rgba(229,107,91,.16), transparent 55%),
+      radial-gradient(700px 500px at 8% 18%, rgba(58,184,165,.10), transparent 55%),
       linear-gradient(170deg, var(--bgTop) 0%, var(--ink) 46%, var(--inkDeep) 100%);
-    background-attachment:fixed;
-    min-height:100dvh; display:flex; align-items:flex-start; justify-content:center;
-    padding:28px 16px calc(34px + env(safe-area-inset-bottom));
-  }
-  .card{
-    width:100%; max-width:468px; background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-    border:1px solid var(--line); border-radius:28px; padding:30px 22px 26px;
-    backdrop-filter:blur(14px); box-shadow:0 40px 90px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.06);
-    text-align:center; position:relative; overflow:hidden;
-  }
-  .logo{width:96px;height:96px;border-radius:23px;display:block;margin:0 auto 16px;
-    box-shadow:0 14px 40px rgba(0,0,0,.5), 0 0 0 1px rgba(251,239,224,.12);}
-  .premium{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:.04em;
-    text-transform:uppercase;color:#241606;background:linear-gradient(135deg,var(--gilt),var(--gold));
-    padding:6px 13px;border-radius:999px;box-shadow:0 6px 16px rgba(217,168,90,.35);margin-bottom:16px}
-  h1{font-family:var(--serif);font-weight:600;font-size:30px;line-height:1.08;letter-spacing:-.01em;margin:0 0 8px}
-  .tag{color:var(--dim);font-size:15px;line-height:1.55;margin:0 auto 8px;max-width:340px}
-  .meta{color:var(--hush);font-size:12.5px;letter-spacing:.02em;margin:0 0 20px;font-weight:500}
-  .meta b{color:var(--gilt)}
+    background-attachment:fixed;min-height:100dvh;display:flex;align-items:flex-start;justify-content:center;
+    padding:28px 16px calc(34px + env(safe-area-inset-bottom));}
+  .card{width:100%;max-width:472px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+    border:1px solid var(--line);border-radius:28px;padding:30px 22px 26px;backdrop-filter:blur(14px);
+    box-shadow:0 40px 90px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);text-align:center;position:relative;overflow:hidden;}
+  .logo{width:92px;height:92px;border-radius:22px;display:block;margin:0 auto 15px;box-shadow:0 14px 40px rgba(0,0,0,.5),0 0 0 1px rgba(251,239,224,.12);}
+  .premium{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+    color:#241606;background:linear-gradient(135deg,var(--gilt),var(--gold));padding:6px 13px;border-radius:999px;box-shadow:0 6px 16px rgba(217,168,90,.35);margin-bottom:15px}
+  h1{font-family:var(--serif);font-weight:600;font-size:29px;line-height:1.08;letter-spacing:-.01em;margin:0 0 8px}
+  .tag{color:var(--dim);font-size:15px;line-height:1.55;margin:0 auto 8px;max-width:350px}
+  .meta{color:var(--hush);font-size:12.5px;margin:0 0 18px;font-weight:500}.meta b{color:var(--gilt)}
 
-  /* ---- city scroller ---- */
-  .cities-h{display:flex;align-items:baseline;justify-content:space-between;margin:0 2px 10px;text-align:left}
+  .cities-h{display:flex;align-items:baseline;justify-content:space-between;margin:6px 2px 10px;text-align:left}
   .cities-h .t{font-family:var(--serif);font-size:14px;color:var(--paperWarm);font-weight:600}
   .cities-h .c{font-size:11.5px;color:var(--hush)}
-  .scroller{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
-    padding:2px 2px 14px;margin:0 -4px 6px;-ms-overflow-style:none;scrollbar-width:none;}
+  .scroller{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 14px;margin:0 -4px 6px;scrollbar-width:none}
   .scroller::-webkit-scrollbar{display:none}
-  .citycard{flex:0 0 auto;width:152px;height:200px;border-radius:18px;scroll-snap-align:start;
-    position:relative;overflow:hidden;padding:13px;display:flex;flex-direction:column;justify-content:flex-end;
-    text-align:left;box-shadow:0 14px 28px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.14);
-    border:1px solid rgba(255,255,255,.12)}
-  .citycard .hero{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
-    animation:fade .5s ease both}
+  .citycard{flex:0 0 auto;width:152px;height:200px;border-radius:18px;scroll-snap-align:start;position:relative;overflow:hidden;
+    padding:13px;display:flex;flex-direction:column;justify-content:flex-end;text-align:left;
+    box-shadow:0 14px 28px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.12);
+    transition:transform .12s ease, box-shadow .12s ease, opacity .2s}
+  .citycard.claimable{cursor:pointer}
+  .citycard.claimable:active{transform:scale(.97)}
+  .citycard.sel{outline:3px solid var(--gilt);outline-offset:-1px;box-shadow:0 18px 36px rgba(232,184,112,.4)}
+  .citycard.soon{opacity:.52;filter:saturate(.7)}
+  .citycard .hero{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;animation:fade .5s ease both}
   @keyframes fade{from{opacity:0}to{opacity:1}}
-  .citycard .scrim{position:absolute;inset:0;z-index:1;
-    background:linear-gradient(to top, rgba(0,0,0,.86) 0%, rgba(0,0,0,.5) 30%, rgba(0,0,0,.06) 62%, rgba(0,0,0,.18) 100%)}
-  .citycard .tint{position:absolute;inset:0;z-index:1;mix-blend-mode:soft-light;opacity:.55}
-  .citycard .nm{font-family:var(--serif);font-weight:600;font-size:19px;color:#fff;
-    position:relative;z-index:2;text-shadow:0 1px 10px rgba(0,0,0,.6)}
-  .citycard .sb{font-size:11px;line-height:1.35;color:rgba(255,255,255,.92);margin-top:3px;position:relative;z-index:2;
-    text-shadow:0 1px 6px rgba(0,0,0,.7)}
-  .citycard .tagline{position:absolute;top:11px;left:11px;z-index:2;font-size:9px;font-weight:700;letter-spacing:.07em;
-    text-transform:uppercase;color:#fff;background:rgba(0,0,0,.42);backdrop-filter:blur(3px);
-    padding:4px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.16)}
+  .citycard .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(0,0,0,.86) 0%,rgba(0,0,0,.5) 30%,rgba(0,0,0,.06) 62%,rgba(0,0,0,.18) 100%)}
+  .citycard .nm{font-family:var(--serif);font-weight:600;font-size:19px;color:#fff;position:relative;z-index:2;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+  .citycard .sb{font-size:11px;line-height:1.35;color:rgba(255,255,255,.92);margin-top:3px;position:relative;z-index:2;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+  .chip{position:absolute;top:11px;left:11px;z-index:2;font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+    padding:4px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(3px)}
+  .chip.free{color:#241606;background:linear-gradient(135deg,var(--gilt),var(--gold))}
+  .chip.soon{color:#fff;background:rgba(0,0,0,.5)}
+  .pickhint{position:absolute;bottom:11px;right:11px;z-index:2;font-size:9px;font-weight:700;color:rgba(255,255,255,.9);
+    background:rgba(0,0,0,.4);padding:3px 7px;border-radius:999px;backdrop-filter:blur(3px)}
 
-  .counter{color:var(--dim);font-size:13.5px;margin:14px 0 16px}
-  .counter b{color:var(--paper)}
-  .ticket{display:inline-block;color:var(--gilt)}
+  .panel{margin-top:8px;border:1px solid var(--line);border-radius:18px;padding:16px;background:var(--surf);text-align:left;
+    transition:opacity .2s} .panel.off{display:none}
+  .panel .pl{font-size:12.5px;color:var(--dim);margin:0 0 4px}
+  .panel .pc{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--paper);margin:0 0 12px}
+  .panel .pc em{color:var(--gilt);font-style:normal}
+  .field label{display:block;font-size:12px;color:var(--dim);margin:0 0 6px;padding-left:2px}
+  input[type=text]{width:100%;padding:13px 15px;border-radius:13px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--paper);font-size:16px;font-family:var(--ui);outline:none;margin-bottom:12px}
+  input[type=text]::placeholder{color:var(--faint)}input[type=text]:focus{border-color:var(--gilt)}
 
-  .field{text-align:left;margin:0 0 14px}
-  .field label{display:block;font-size:12.5px;color:var(--dim);margin:0 0 6px;padding-left:4px}
-  input[type=text]{width:100%;padding:14px 16px;border-radius:14px;border:1px solid var(--line);
-    background:var(--surf);color:var(--paper);font-size:16px;font-family:var(--ui);outline:none}
-  input[type=text]::placeholder{color:var(--faint)}
-  input[type=text]:focus{border-color:var(--gilt);background:var(--surf2)}
-
-  .btn{width:100%;border:0;border-radius:16px;padding:16px;font-size:17px;font-weight:700;cursor:pointer;
-    font-family:var(--ui);transition:transform .08s ease,opacity .2s}
-  .btn:active{transform:translateY(1px) scale(.99)}
-  .btn[disabled]{opacity:.55;cursor:default}
-  .btn.gold{background:linear-gradient(135deg,var(--gilt),var(--gold));color:#241606;box-shadow:0 14px 30px rgba(217,168,90,.4)}
-  .btn.coral{background:linear-gradient(135deg,var(--coral),var(--deep));color:#fff;box-shadow:0 14px 30px rgba(229,107,91,.38)}
+  .btn{width:100%;border:0;border-radius:15px;padding:15px;font-size:16px;font-weight:700;cursor:pointer;font-family:var(--ui);transition:transform .08s,opacity .2s}
+  .btn:active{transform:translateY(1px) scale(.99)}.btn[disabled]{opacity:.5;cursor:default}
+  .btn.gold{background:linear-gradient(135deg,var(--gilt),var(--gold));color:#241606;box-shadow:0 12px 28px rgba(217,168,90,.4)}
+  .btn.coral{background:linear-gradient(135deg,var(--coral),var(--deep));color:#fff;box-shadow:0 12px 28px rgba(229,107,91,.38)}
   .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--paper);font-weight:600;font-size:15px}
-  .fine{color:var(--hush);font-size:12px;line-height:1.55;margin-top:16px}
+  .fine{color:var(--hush);font-size:12px;line-height:1.55;margin-top:14px}
 
   .hidden{display:none}
-  .codebox{margin:8px 0 4px;padding:18px;border-radius:16px;border:1px dashed rgba(232,184,112,.5);
-    background:linear-gradient(180deg, rgba(232,184,112,.10), rgba(232,184,112,.04))}
+  .unlocking{display:inline-block;font-size:13px;color:var(--gilt);font-weight:600;margin-bottom:6px}
+  .codebox{margin:8px 0 4px;padding:18px;border-radius:16px;border:1px dashed rgba(232,184,112,.5);background:linear-gradient(180deg,rgba(232,184,112,.10),rgba(232,184,112,.04))}
   .codebox .lbl{font-size:11px;color:var(--gilt);letter-spacing:.08em;text-transform:uppercase;margin-bottom:9px;font-weight:700}
-  .code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:21px;font-weight:700;letter-spacing:.06em;word-break:break-all;color:var(--paper)}
+  .code{font-family:ui-monospace,Menlo,monospace;font-size:21px;font-weight:700;letter-spacing:.06em;word-break:break-all;color:var(--paper)}
   .copy{margin-top:10px;font-size:13px;color:var(--gilt);background:none;border:0;cursor:pointer;font-weight:600}
-  ol.steps{text-align:left;color:var(--dim);font-size:13.5px;line-height:1.65;padding-left:20px;margin:18px 0}
-  ol.steps b{color:var(--paper)}
-  .stack>*+*{margin-top:12px}
-  .check{font-size:44px;margin-bottom:4px}
+  ol.steps{text-align:left;color:var(--dim);font-size:13.5px;line-height:1.65;padding-left:20px;margin:18px 0}ol.steps b{color:var(--paper)}
+  .stack>*+*{margin-top:12px}.check{font-size:44px;margin-bottom:4px}
   .spin{display:inline-block;width:18px;height:18px;border:2.5px solid rgba(36,22,6,.35);border-top-color:#241606;border-radius:50%;animation:r .7s linear infinite;vertical-align:-3px;margin-right:8px}
   @keyframes r{to{transform:rotate(360deg)}}
 </style>
@@ -115,67 +97,67 @@
 <body>
 <main class="card">
 
-  <!-- ============ STEP 1: intro / claim ============ -->
+  <!-- ============ STEP 1: pick a city ============ -->
   <section id="view-claim">
-    <img class="logo" src="logo.png" alt="World City Explorer" width="96" height="96">
-    <div class="premium">✦ Premium unlocked, on me</div>
-    <h1>World City Explorer</h1>
-    <p class="tag">Cinematic, story-rich audio guides for the world's great cities. Grab a free code below — the whole app, unlocked, my treat. 🌍</p>
-    <p class="meta"><b>25 cities</b> · 5 languages · hours of narrated history</p>
+    <img class="logo" src="logo.png" alt="World City Explorer" width="92" height="92">
+    <div class="premium">✦ One city, unlocked, on me</div>
+    <h1>Pick your city</h1>
+    <p class="tag">Cinematic, story-rich audio guides for the world's great cities. Choose one below and I'll unlock it for you — free. 🌍</p>
+    <p class="meta"><b id="availCount">…</b> · 5 languages · hours of narrated history</p>
 
-    <div class="cities-h"><span class="t">A taste of where you'll wander</span><span class="c">swipe →</span></div>
+    <div class="cities-h"><span class="t">Tap a city to unlock it free</span><span class="c">swipe →</span></div>
     <div class="scroller" id="scroller" aria-label="Cities"></div>
 
-    <p class="counter" id="counter">Checking availability…</p>
-    <div class="field">
-      <label for="name">Your name (so I know who grabbed one)</label>
-      <input id="name" type="text" autocomplete="name" placeholder="e.g. Alex" maxlength="60">
+    <div class="panel off" id="panel">
+      <p class="pl">You picked</p>
+      <p class="pc" id="panelCity">—</p>
+      <div class="field">
+        <label for="name">Your name (so I know who grabbed one)</label>
+        <input id="name" type="text" autocomplete="name" placeholder="e.g. Alex" maxlength="60">
+      </div>
+      <button class="btn gold" id="claimBtn">Get my code →</button>
     </div>
-    <button class="btn gold" id="claimBtn">Get my free code →</button>
-    <p class="fine">One code per person · works on iPhone &amp; iPad · redeemed in the App Store.</p>
+    <p class="fine" id="claimFine">Each code unlocks one city · works on iPhone &amp; iPad · redeemed in the App Store.</p>
   </section>
 
   <!-- ============ STEP 2: the code ============ -->
   <section id="view-code" class="hidden">
-    <img class="logo" src="logo.png" alt="" width="96" height="96">
+    <img class="logo" src="logo.png" alt="" width="92" height="92">
     <div class="premium">🎟️ Your code is reserved</div>
+    <span class="unlocking" id="unlocking">🔓 Unlocking —</span>
     <h1>Here you go!</h1>
     <p class="tag">Tap below to open the App Store with your code pre-filled, then confirm to install.</p>
-
     <div class="codebox">
       <div class="lbl">Your one-time code</div>
       <div class="code" id="codeText">—</div>
       <button class="copy" id="copyBtn">Copy code</button>
     </div>
-
     <div class="stack" style="margin-top:18px">
       <a class="btn coral" id="redeemLink" href="#" target="_blank" rel="noopener">Open in App Store</a>
       <button class="btn ghost" id="installedBtn">✅ I installed it</button>
     </div>
-
     <ol class="steps">
       <li>Tap <b>Open in App Store</b> — the redeem screen opens with your code filled in.</li>
-      <li>Tap <b>Redeem</b>, confirm with Face ID, and the app installs free with premium on.</li>
+      <li>Tap <b>Redeem</b>, confirm with Face ID, and that city unlocks free.</li>
       <li>Come back and tap <b>I installed it</b> so I know it worked. 🙌</li>
     </ol>
-    <p class="fine">Keep this code — it's reserved for you. If the App Store says it's already used, the install already worked.</p>
+    <p class="fine">Keep this code — it's reserved for you. If the App Store says it's already used, the unlock already worked.</p>
   </section>
 
   <!-- ============ STEP 3: done ============ -->
   <section id="view-done" class="hidden">
-    <img class="logo" src="logo.png" alt="" width="96" height="96">
-    <div class="check">🎉</div>
-    <h1>You're all set!</h1>
-    <p class="tag">Thanks for trying World City Explorer. Wander somewhere new — and tell me what you think!</p>
+    <img class="logo" src="logo.png" alt="" width="92" height="92">
+    <div class="check">🎉</div><h1>You're all set!</h1>
+    <p class="tag" id="doneMsg">Enjoy exploring — and tell me what you think!</p>
     <a class="btn coral" id="reopenLink" href="#" target="_blank" rel="noopener">Open the App Store again</a>
   </section>
 
-  <!-- ============ sold out ============ -->
+  <!-- ============ sold out (per city) ============ -->
   <section id="view-empty" class="hidden">
-    <img class="logo" src="logo.png" alt="" width="96" height="96">
-    <div class="check">🙈</div>
-    <h1>All codes claimed</h1>
-    <p class="tag">Every free code has been grabbed. Ping me and I'll add more!</p>
+    <img class="logo" src="logo.png" alt="" width="92" height="92">
+    <div class="check">🙈</div><h1 id="emptyTitle">All claimed</h1>
+    <p class="tag" id="emptyMsg">Every free code for this city has been grabbed. Pick another, or ping me for more!</p>
+    <button class="btn ghost" id="backBtn">← Pick another city</button>
   </section>
 
 </main>
@@ -183,107 +165,109 @@
 <script>
   const WORKER_URL = "https://wce-offer-codes.alberto-rodriguez-salgado-97.workers.dev";
 
-  // Cities mirror the in-app picker: name + subtitle + accent gradient.
+  // id MUST match the IAP product slug (com.alrod97.cityexplorer.city.<id>) so each
+  // pool maps to the right city. img = hero from R2.
   const CITIES = [
-    {n:"Paris",s:"Boulevards, light, Belle Époque echoes",a:"#b85a6a",d:"#5b1f2e",img:"https://worldcityexplorer.net/images/paris_poi_001_hero.png"},
-    {n:"Tokyo",s:"Edo neon, shrine quiet",a:"#e8425c",d:"#7a2532",img:"https://worldcityexplorer.net/images/tokyo_poi_001_hero.png"},
-    {n:"Rome",s:"Eternal stones, dome-light",a:"#c0392b",d:"#5c2a1f",img:"https://worldcityexplorer.net/images/rome_poi_001_hero.png"},
-    {n:"New York City",s:"Concrete dreams, neon nights",a:"#f5a623",d:"#7a4f0d",img:"https://worldcityexplorer.net/images/nyc_poi_001_hero.png"},
-    {n:"Barcelona",s:"Modernisme, Mediterranean legends",a:"#e56b5b",d:"#7d3a3a",img:"https://worldcityexplorer.net/images/barcelona_poi_001_hero.jpg"},
-    {n:"Kyoto",s:"Imperial silence, lacquer red",a:"#c83a3a",d:"#5e1d1d",img:"https://worldcityexplorer.net/images/kyoto_poi_001_hero.png"},
-    {n:"London",s:"Foggy lanterns, river kingdoms",a:"#c0392b",d:"#5c1a14",img:"https://worldcityexplorer.net/images/london_poi_001_hero.png"},
-    {n:"Istanbul",s:"Bosphorus light, minarets, spice",a:"#c54a52",d:"#5e1f24",img:"https://worldcityexplorer.net/images/istanbul_poi_001_cue_01.png"},
-    {n:"Lisbon",s:"Saudade, fado, Atlantic light",a:"#2d6a78",d:"#123440",img:"https://worldcityexplorer.net/images/lisbon_poi_001_hero.png"},
-    {n:"Madrid",s:"Golden Age, royal avenues",a:"#d9a85a",d:"#7a5224",img:"https://worldcityexplorer.net/images/madrid_poi_001_hero.png"},
-    {n:"Mexico City",s:"Aztec myth, colonial collision",a:"#3ab8a5",d:"#0e3a38",img:"https://worldcityexplorer.net/images/mexico_city_poi_001_hero.png"},
-    {n:"Athens",s:"Marble light, gods, wine-dark evenings",a:"#3a7bb8",d:"#16385c",img:"https://worldcityexplorer.net/images/athens_poi_001_hero.png"},
-    {n:"Hong Kong",s:"Neon harbours, dim sum mornings",a:"#d83a3a",d:"#5e1212",img:"https://worldcityexplorer.net/images/hongkong_poi_001_hero.jpg"},
-    {n:"Seoul",s:"Joseon palaces, neon hanok",a:"#2e6da4",d:"#122d45",img:"https://worldcityexplorer.net/images/seoul_poi_001_hero.png"},
-    {n:"Bangkok",s:"Gilded temples, river light",a:"#d4a017",d:"#6e5410",img:"https://worldcityexplorer.net/images/bangkok_poi_001_hero.jpg"},
-    {n:"Osaka",s:"Kuidaore, neon canals",a:"#f0a830",d:"#7c5414",img:"https://worldcityexplorer.net/images/osaka_poi_001_hero.png"},
-    {n:"Taipei",s:"Jade towers, temple smoke",a:"#2d8c5e",d:"#12402a",img:"https://worldcityexplorer.net/images/taipei_poi_001_hero.png"},
-    {n:"San Francisco",s:"Fog, hills, golden gateways",a:"#c0392b",d:"#5c1a14",img:"https://worldcityexplorer.net/images/sf_poi_001_hero.jpg"},
-    {n:"Los Angeles",s:"Sun-bleached boulevards, Pacific dusk",a:"#e88f3a",d:"#7a3a14",img:"https://worldcityexplorer.net/images/losangeles_poi_001_hero.png"},
-    {n:"Berlin",s:"Cold War ghosts, techno nights",a:"#4a7fa5",d:"#1e3a52",img:"https://worldcityexplorer.net/images/berlin_poi_001_hero.jpg"},
-    {n:"Shanghai",s:"Bund neon, shikumen alleys",a:"#2d6a78",d:"#14393f",img:"https://worldcityexplorer.net/images/shanghai_poi_001_hero.jpg"},
-    {n:"Beijing",s:"Imperial silence, dragon courtyards",a:"#8b2635",d:"#4a1018",img:"https://worldcityexplorer.net/images/beijing_poi_001_hero.jpg"},
-    {n:"Munich",s:"Bavarian beer, Alpine horizons",a:"#4a7c59",d:"#1e3828",img:"https://worldcityexplorer.net/images/munich_poi_001_hero.png"},
-    {n:"Chengdu",s:"Bamboo, teahouses, slow days",a:"#5d7c3c",d:"#2d3e16",img:"https://worldcityexplorer.net/images/chengdu_poi_001_hero.jpg"},
-    {n:"Chongqing",s:"Mountain heat, hot-pot fog",a:"#c44d20",d:"#5e2410",img:"https://worldcityexplorer.net/images/chongqing_poi_001_hero.jpg"},
+    {id:"paris",n:"Paris",s:"Boulevards, light, Belle Époque echoes",a:"#b85a6a",d:"#5b1f2e",img:"https://worldcityexplorer.net/images/paris_poi_001_hero.png"},
+    {id:"tokyo",n:"Tokyo",s:"Edo neon, shrine quiet",a:"#e8425c",d:"#7a2532",img:"https://worldcityexplorer.net/images/tokyo_poi_001_hero.png"},
+    {id:"rome",n:"Rome",s:"Eternal stones, dome-light",a:"#c0392b",d:"#5c2a1f",img:"https://worldcityexplorer.net/images/rome_poi_001_hero.png"},
+    {id:"newyork",n:"New York City",s:"Concrete dreams, neon nights",a:"#f5a623",d:"#7a4f0d",img:"https://worldcityexplorer.net/images/nyc_poi_001_hero.png"},
+    {id:"barcelona",n:"Barcelona",s:"Modernisme, Mediterranean legends",a:"#e56b5b",d:"#7d3a3a",img:"https://worldcityexplorer.net/images/barcelona_poi_001_hero.jpg"},
+    {id:"kyoto",n:"Kyoto",s:"Imperial silence, lacquer red",a:"#c83a3a",d:"#5e1d1d",img:"https://worldcityexplorer.net/images/kyoto_poi_001_hero.png"},
+    {id:"london",n:"London",s:"Foggy lanterns, river kingdoms",a:"#c0392b",d:"#5c1a14",img:"https://worldcityexplorer.net/images/london_poi_001_hero.png"},
+    {id:"istanbul",n:"Istanbul",s:"Bosphorus light, minarets, spice",a:"#c54a52",d:"#5e1f24",img:"https://worldcityexplorer.net/images/istanbul_poi_001_cue_01.png"},
+    {id:"lisbon",n:"Lisbon",s:"Saudade, fado, Atlantic light",a:"#2d6a78",d:"#123440",img:"https://worldcityexplorer.net/images/lisbon_poi_001_hero.png"},
+    {id:"madrid",n:"Madrid",s:"Golden Age, royal avenues",a:"#d9a85a",d:"#7a5224",img:"https://worldcityexplorer.net/images/madrid_poi_001_hero.png"},
+    {id:"mexicocity",n:"Mexico City",s:"Aztec myth, colonial collision",a:"#3ab8a5",d:"#0e3a38",img:"https://worldcityexplorer.net/images/mexico_city_poi_001_hero.png"},
+    {id:"athens",n:"Athens",s:"Marble light, gods, wine-dark evenings",a:"#3a7bb8",d:"#16385c",img:"https://worldcityexplorer.net/images/athens_poi_001_hero.png"},
+    {id:"hongkong",n:"Hong Kong",s:"Neon harbours, dim sum mornings",a:"#d83a3a",d:"#5e1212",img:"https://worldcityexplorer.net/images/hongkong_poi_001_hero.jpg"},
+    {id:"seoul",n:"Seoul",s:"Joseon palaces, neon hanok",a:"#2e6da4",d:"#122d45",img:"https://worldcityexplorer.net/images/seoul_poi_001_hero.png"},
+    {id:"bangkok",n:"Bangkok",s:"Gilded temples, river light",a:"#d4a017",d:"#6e5410",img:"https://worldcityexplorer.net/images/bangkok_poi_001_hero.jpg"},
+    {id:"osaka",n:"Osaka",s:"Kuidaore, neon canals",a:"#f0a830",d:"#7c5414",img:"https://worldcityexplorer.net/images/osaka_poi_001_hero.png"},
+    {id:"taipei",n:"Taipei",s:"Jade towers, temple smoke",a:"#2d8c5e",d:"#12402a",img:"https://worldcityexplorer.net/images/taipei_poi_001_hero.png"},
+    {id:"sanfrancisco",n:"San Francisco",s:"Fog, hills, golden gateways",a:"#c0392b",d:"#5c1a14",img:"https://worldcityexplorer.net/images/sf_poi_001_hero.jpg"},
+    {id:"losangeles",n:"Los Angeles",s:"Sun-bleached boulevards, Pacific dusk",a:"#e88f3a",d:"#7a3a14",img:"https://worldcityexplorer.net/images/losangeles_poi_001_hero.png"},
+    {id:"berlin",n:"Berlin",s:"Cold War ghosts, techno nights",a:"#4a7fa5",d:"#1e3a52",img:"https://worldcityexplorer.net/images/berlin_poi_001_hero.jpg"},
+    {id:"shanghai",n:"Shanghai",s:"Bund neon, shikumen alleys",a:"#2d6a78",d:"#14393f",img:"https://worldcityexplorer.net/images/shanghai_poi_001_hero.jpg"},
+    {id:"beijing",n:"Beijing",s:"Imperial silence, dragon courtyards",a:"#8b2635",d:"#4a1018",img:"https://worldcityexplorer.net/images/beijing_poi_001_hero.jpg"},
+    {id:"munich",n:"Munich",s:"Bavarian beer, Alpine horizons",a:"#4a7c59",d:"#1e3828",img:"https://worldcityexplorer.net/images/munich_poi_001_hero.png"},
+    {id:"chengdu",n:"Chengdu",s:"Bamboo, teahouses, slow days",a:"#5d7c3c",d:"#2d3e16",img:"https://worldcityexplorer.net/images/chengdu_poi_001_hero.jpg"},
+    {id:"chongqing",n:"Chongqing",s:"Mountain heat, hot-pot fog",a:"#c44d20",d:"#5e2410",img:"https://worldcityexplorer.net/images/chongqing_poi_001_hero.jpg"},
   ];
 
+  const $ = (id) => document.getElementById(id);
+  const show = (v) => { ["view-claim","view-code","view-done","view-empty"].forEach(x=>$(x).classList.add("hidden")); $(v).classList.remove("hidden"); window.scrollTo({top:0,behavior:"smooth"}); };
+  let avail = {};            // slug -> {available,total}
+  let selected = null;       // chosen city object
+
   function renderCities(){
-    const el = document.getElementById("scroller");
-    el.innerHTML = CITIES.map(c => `
-      <div class="citycard" style="background:linear-gradient(155deg, ${c.a}, ${c.d})">
+    const el = $("scroller");
+    el.innerHTML = CITIES.map((c,i) => {
+      const a = avail[c.id] || {available:0,total:0};
+      const claimable = a.available > 0;
+      const chip = claimable ? `<span class="chip free">Free</span>` : `<span class="chip soon">Soon</span>`;
+      const hint = claimable ? `<span class="pickhint">Tap to unlock</span>` : "";
+      return `<div class="citycard ${claimable?'claimable':'soon'}" data-i="${i}" style="background:linear-gradient(155deg,${c.a},${c.d})">
         <img class="hero" src="${c.img}" alt="${c.n}" loading="lazy" decoding="async" onerror="this.remove()">
-        <div class="scrim"></div>
-        <div class="tint" style="background:linear-gradient(155deg, ${c.a}, ${c.d})"></div>
-        <span class="tagline">◍ Audio guide</span>
-        <div class="nm">${c.n}</div>
-        <div class="sb">${c.s}</div>
-      </div>`).join("");
+        <div class="scrim"></div>${chip}${hint}
+        <div class="nm">${c.n}</div><div class="sb">${c.s}</div>
+      </div>`;
+    }).join("");
+    el.querySelectorAll(".citycard.claimable").forEach(node=>{
+      node.addEventListener("click", ()=> selectCity(CITIES[+node.dataset.i], node));
+    });
   }
 
-  const $ = (id) => document.getElementById(id);
-  const show = (id) => {
-    ["view-claim","view-code","view-done","view-empty"].forEach(v => $(v).classList.add("hidden"));
-    $(id).classList.remove("hidden");
-    window.scrollTo({top:0,behavior:"smooth"});
-  };
-  let currentCode = null;
+  function selectCity(c, node){
+    selected = c;
+    document.querySelectorAll(".citycard.sel").forEach(n=>n.classList.remove("sel"));
+    node.classList.add("sel");
+    $("panelCity").innerHTML = `Unlock <em>${c.n}</em>`;
+    $("claimBtn").textContent = `Get my ${c.n} code →`;
+    $("panel").classList.remove("off");
+    $("panel").scrollIntoView({behavior:"smooth", block:"center"});
+  }
 
-  async function loadStats(){
+  async function loadCities(){
     try{
-      const s = await (await fetch(WORKER_URL + "/api/stats")).json();
-      if (s.available <= 0){ show("view-empty"); return; }
-      $("counter").innerHTML = `<span class="ticket">🎟️</span> <b>${s.available}</b> free pass${s.available===1?"":"es"} left`;
-    }catch{ $("counter").textContent = ""; }
+      const data = await (await fetch(WORKER_URL + "/api/cities")).json();
+      avail = data.cities || {};
+    }catch{ avail = {}; }
+    const n = CITIES.filter(c => (avail[c.id]?.available||0) > 0).length;
+    $("availCount").textContent = n>0 ? `${n} ${n===1?'city':'cities'} free right now` : `25 cities`;
+    if(n===0) $("claimFine").textContent = "Free codes drop soon — check back!";
+    renderCities();
   }
 
   async function claim(){
-    const btn = $("claimBtn");
-    btn.disabled = true;
-    btn.innerHTML = '<span class="spin"></span>Reserving your code…';
+    if(!selected) return;
+    const btn = $("claimBtn"); btn.disabled = true; btn.innerHTML = '<span class="spin"></span>Reserving…';
     try{
-      const r = await fetch(WORKER_URL + "/api/claim", {
-        method:"POST", headers:{"Content-Type":"application/json"},
-        body: JSON.stringify({ name: $("name").value })
-      });
-      if (r.status === 410){ show("view-empty"); return; }
+      const r = await fetch(WORKER_URL + "/api/claim", {method:"POST",headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({ city: selected.id, name: $("name").value })});
+      if (r.status === 410){ $("emptyTitle").textContent = `${selected.n} just sold out`; show("view-empty"); return; }
       if (!r.ok) throw new Error();
-      const data = await r.json();
-      currentCode = data.code;
-      $("codeText").textContent = data.code;
-      $("redeemLink").href = data.url;
-      $("reopenLink").href = data.url;
+      const d = await r.json();
+      $("unlocking").textContent = `🔓 Unlocking ${selected.n}`;
+      $("doneMsg").textContent = `Enjoy exploring ${selected.n} — and tell me what you think!`;
+      $("codeText").textContent = d.code; $("redeemLink").href = d.url; $("reopenLink").href = d.url;
       show("view-code");
-    }catch{
-      btn.disabled = false;
-      btn.textContent = "Hmm, try again →";
-    }
+    }catch{ btn.disabled = false; btn.textContent = "Hmm, try again →"; }
   }
 
   async function markInstalled(){
     $("installedBtn").disabled = true;
-    try{
-      await fetch(WORKER_URL + "/api/redeemed", {
-        method:"POST", headers:{"Content-Type":"application/json"},
-        body: JSON.stringify({ code: currentCode })
-      });
-    }catch{}
+    try{ await fetch(WORKER_URL + "/api/redeemed", {method:"POST",headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({ city: selected?.id, code: $("codeText").textContent })}); }catch{}
     show("view-done");
   }
 
   $("claimBtn").addEventListener("click", claim);
   $("installedBtn").addEventListener("click", markInstalled);
-  $("copyBtn").addEventListener("click", async () => {
-    try{ await navigator.clipboard.writeText(currentCode); $("copyBtn").textContent = "Copied ✓"; }
-    catch{ $("copyBtn").textContent = "Select & copy the code above"; }
-  });
+  $("backBtn").addEventListener("click", ()=>{ loadCities(); show("view-claim"); });
+  $("copyBtn").addEventListener("click", async ()=>{ try{ await navigator.clipboard.writeText($("codeText").textContent); $("copyBtn").textContent="Copied ✓"; }catch{ $("copyBtn").textContent="Select & copy above"; } });
 
-  renderCities();
-  loadStats();
+  loadCities();
 </script>
 </body>
 </html>
