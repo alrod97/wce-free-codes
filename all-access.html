@@ -57,6 +57,12 @@
   .field label{display:block;font-size:12.5px;color:var(--dim);margin:0 0 6px;padding-left:4px}
   input[type=text]{width:100%;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:var(--surf);color:var(--paper);font-size:16px;font-family:var(--ui);outline:none}
   input[type=text]::placeholder{color:var(--faint)}input[type=text]:focus{border-color:var(--gilt)}
+  .note{text-align:left;background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:15px 16px;margin:0 0 16px}
+  .note p{margin:0 0 10px;font-size:13.5px;line-height:1.6;color:var(--dim)}
+  .note p:last-child{margin-bottom:0}
+  .note b{color:var(--paper)}
+  .note a{color:var(--gilt);font-weight:600;text-decoration:none;word-break:break-word}
+  .note a:active{text-decoration:underline}
   .btn{width:100%;border:0;border-radius:16px;padding:16px;font-size:17px;font-weight:700;cursor:pointer;font-family:var(--ui);transition:transform .08s,opacity .2s}
   .btn:active{transform:translateY(1px) scale(.99)}.btn[disabled]{opacity:.5;cursor:default}
   .btn.gold{background:linear-gradient(135deg,#f3d089,var(--gilt),var(--gold));color:#241606;box-shadow:0 14px 32px rgba(217,168,90,.45)}
@@ -88,9 +94,10 @@
     <div class="mosaic" id="mosaic"></div>
     <p class="counter" id="counter">Checking…</p>
 
-    <div class="field">
-      <label for="name">Your name (so I know who I gifted)</label>
-      <input id="name" type="text" autocomplete="name" placeholder="e.g. Mom" maxlength="60">
+    <div class="note">
+      <p>💛 <b>Please only claim a code if you genuinely intend to use it</b> — and you'll need an Apple device to redeem it: iPhone, iPad, or Mac.</p>
+      <p>If you enjoy the app, I'd be so happy if you left a kind <b>review on the App Store</b> ⭐️ and a few nice words — it makes a real difference for a small indie project.</p>
+      <p>Have feedback or ideas? I'd genuinely love to hear them — just write to me at <a href="mailto:alberto.rodriguez.salgado97@gmail.com">alberto.rodriguez.salgado97@gmail.com</a>.</p>
     </div>
     <button class="btn gold" id="claimBtn">Claim my all-access pass →</button>
     <p class="fine">Unlocks all 25 cities · works on iPhone &amp; iPad · redeemed in the App Store.</p>
@@ -138,11 +145,11 @@
 
   // hero thumbnails for the mosaic (value showcase)
   const HEROES = [
-    "paris_poi_001_hero.png","tokyo_poi_001_hero.png","rome_poi_001_hero.png","nyc_poi_001_hero.png","barcelona_poi_001_hero.jpg",
-    "kyoto_poi_001_hero.png","london_poi_001_hero.png","istanbul_poi_001_cue_01.png","lisbon_poi_001_hero.png","madrid_poi_001_hero.png",
-    "mexico_city_poi_001_hero.png","athens_poi_001_hero.png","hongkong_poi_001_hero.jpg","seoul_poi_001_hero.png","bangkok_poi_001_hero.jpg",
-    "osaka_poi_001_hero.png","taipei_poi_001_hero.png","sf_poi_001_hero.jpg","losangeles_poi_001_hero.png","berlin_poi_001_hero.jpg",
-    "shanghai_poi_001_hero.jpg","beijing_poi_001_hero.jpg","munich_poi_001_hero.png","chengdu_poi_001_hero.jpg","chongqing_poi_001_hero.jpg",
+    "paris_hero.jpg","tokyo_hero.jpg","rome_hero.jpg","nyc_hero.jpg","barcelona_hero.jpg",
+    "kyoto_hero.jpg","london_hero.jpg","istanbul_hero.jpg","lisbon_hero.jpg","madrid_hero.jpg",
+    "mexico_hero.jpg","athens_hero.jpg","hongkong_hero.jpg","seoul_hero.jpg","bangkok_hero.jpg",
+    "osaka_hero.jpg","taipei_hero.jpg","sanfrancisco_hero.jpg","losangeles_hero.jpg","berlin_hero.jpg",
+    "shanghai_hero.jpg","beijing_hero.jpg","munich_hero.jpg","chengdu_hero.jpg","chongqing_hero.jpg",
   ];
   const $ = (id) => document.getElementById(id);
   const show = (v) => { ["view-claim","view-code","view-done","view-empty"].forEach(x=>$(x).classList.add("hidden")); $(v).classList.remove("hidden"); window.scrollTo({top:0,behavior:"smooth"}); };
@@ -165,7 +172,7 @@
     const btn = $("claimBtn"); btn.disabled = true; btn.innerHTML = '<span class="spin"></span>Reserving your pass…';
     try{
       const r = await fetch(WORKER_URL + "/api/claim", {method:"POST",headers:{"Content-Type":"application/json"},
-        body: JSON.stringify({ city: TARGET, name: $("name").value })});
+        body: JSON.stringify({ city: TARGET, name: "" })});
       if (r.status === 410){ show("view-empty"); return; }
       if (!r.ok) throw new Error();
       const d = await r.json();
